@@ -323,7 +323,15 @@ define(['Q', 'underscore', 'mifosX'], function (Q) {
 			'adhocquery/AdHocQueryListController',
             'adhocquery/CreateAdHocQueryController',
             'adhocquery/ViewAdHocQueryController',
-            'adhocquery/EditAdHocQueryController'
+            'adhocquery/EditAdHocQueryController',
+            'loanAccount/NewGLIMAccountController',
+            'loanAccount/ViewGLIMaccountController',
+            'loanAccount/GLIMLoanAccountActionsController',
+            'savings/CreateGSIMAccountController',
+            'savings/ViewGSIMaccountController',
+            'savings/GSIMAccountActionsController',
+            'savings/EditGSIMAccountController',
+            'savings/AddNewMemberToGSIMController'
 
         ],
         filters: [
