@@ -232,10 +232,10 @@
 
             scope.submit = function () {
 
-                if (WizardHandler.wizard().getCurrentStep() != scope.noOfTabs) {
-                    WizardHandler.wizard().next();
-                    return;
-                }
+               // if (WizardHandler.wizard().currentStep() != scope.noOfTabs) {
+               //     WizardHandler.wizard().next();
+                //    return;
+                //}
                 if (scope.date) {
                     this.formData1.submittedOnDate = dateFilter(scope.date.submittedOnDate, scope.df);
                 }

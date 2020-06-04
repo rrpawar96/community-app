@@ -253,17 +253,17 @@
 
             /* Submit button action */
 
-            scope.change= function(data){
-                scope.gsimAccountId=data;
+          //  scope.change= function(data){
+          //      scope.gsimAccountId=data;
 
-            }
+            //}
 
 
             scope.submit = function () {
-                if (WizardHandler.wizard().getCurrentStep() != scope.noOfTabs) {
-                    WizardHandler.wizard().next();
-                    return;
-                }
+             //   if (WizardHandler.wizard().getCurrentStep() != scope.noOfTabs) {
+             //       WizardHandler.wizard().next();
+             //       return;
+             //   }
 
                 if (!_.isUndefined(scope.datatables) && scope.datatables.length > 0) {
                     angular.forEach(scope.datatables, function (datatable, index) {
@@ -344,7 +344,7 @@
                          }
                          }*/
                         loanApplication.charges=loanApp.charges;
-                        loanApplication.linkAccountId=scope.gsimAccountId;
+                      //  loanApplication.linkAccountId=scope.gsimAccountId;
                         loanApplication.locale = scope.optlang.code;
                         loanApplication.dateFormat =  scope.df;
                         loanApplication.groupId = scope.group.id;
