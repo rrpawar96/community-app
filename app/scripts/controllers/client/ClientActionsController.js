@@ -84,7 +84,7 @@
                     scope.breadcrumbName = 'label.anchor.assignstaff';
                     scope.labelName = 'label.input.staff';
                     scope.staffField = true;
-                    resourceFactory.clientResource.get({clientId: routeParams.id, template: 'true',staffInSelectedOfficeOnly:true}, function (data) {
+                    resourceFactory.clientResource.get({clientId: routeParams.id, template: 'true',staffInSelectedOfficeOnly:false}, function (data) {
                         if (data.staffOptions) {
                             scope.staffOptions = data.staffOptions;
                             scope.formData.staffId = scope.staffOptions[0].id;

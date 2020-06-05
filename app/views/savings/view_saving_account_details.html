@@ -453,6 +453,12 @@
                                 <th class="pointer" ng-click="changeTransactionSort('transactionType.value')">
                                     {{'label.heading.transactiontype' | translate}}
                                 </th>
+                                <th class="pointer" ng-click="changeTransactionSort('PaymentDetailData.voucherNumber')">
+                                    {{'label.heading.voucherNumber' | translate}}
+                                </th>
+                                <th class="pointer" ng-click="changeTransactionSort('PaymentDetailData.paymentDescription')">
+                                    {{'label.heading.paymentDescription' | translate}}
+                                </th>
                                 <th class="pointer" ng-click="changeTransactionSort('amount')">{{'label.heading.debit' |
                                     translate}}
                                 </th>
@@ -481,6 +487,14 @@
                                 <td class="pointer"
                                     data-ng-click="routeTo(transaction.accountId,transaction.id,transaction.transfer,transaction.transfer.id)">
                                     {{transaction.transactionType.value}}
+                                </td>
+                                <td class="pointer"
+                                    data-ng-click="routeTo(transaction.accountId,transaction.id,transaction.transfer,transaction.transfer.id)">
+                                    {{transaction.paymentDetailData.voucherNumber}}
+                                </td>
+                                <td class="pointer"
+                                    data-ng-click="routeTo(transaction.accountId,transaction.id,transaction.transfer,transaction.transfer.id)">
+                                    {{transaction.paymentDetailData.paymentDescription}}
                                 </td>
                                 <td class="pointer"
                                     data-ng-click="routeTo(transaction.accountId,transaction.id,transaction.transfer,transaction.transfer.id)">

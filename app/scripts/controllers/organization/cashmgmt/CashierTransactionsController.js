@@ -1,10 +1,11 @@
 (function (module) {
     mifosX.controllers = _.extend(module, {
         CashierTransactionsController: function (scope, routeParams, route, location, resourceFactory) {
-
+            scope.restrictDate = new Date();
             scope.cashiertxns = [];
             scope.txnPerPage = 15;
-            scope.formData = [];
+            //scope.formData = [];
+            scope.formData = {};
             scope.cashierTransactions = [];
 
             scope.routeTo = function (id) {
@@ -52,6 +53,8 @@
                 resourceFactory.tellerCashierSummaryAndTxnsResource.getCashierSummaryAndTransactions({
                     tellerId: routeParams.tellerId,
                     cashierId: routeParams.cashierId,
+                    fromDate: routeParams.fromDate,
+                    toDate: routeParams.toDate,
                     currencyCode: routeParams.currencyCode,
                     offset:((pageNumber - 1) * scope.txnPerPage),
                     limit:scope.txnPerPage
@@ -66,6 +69,8 @@
                 var items = resourceFactory.tellerCashierSummaryAndTxnsResource.getCashierSummaryAndTransactions({
                     tellerId: routeParams.tellerId,
                     cashierId: routeParams.cashierId,
+                    fromDate: routeParams.fromDate,
+                    toDate: routeParams.toDate,
                     currencyCode: routeParams.currencyCode,
                     offset:0,
                     limit: scope.txnPerPage

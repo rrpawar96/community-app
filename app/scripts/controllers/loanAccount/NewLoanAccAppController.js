@@ -21,6 +21,7 @@
             scope.loanApp = "LoanApp";
             scope.customSteps = [];
             scope.tempDataTables = [];
+            scope.staffInSelectedOfficeOnly=true
             scope.disabled = true;
 
             scope.date.first = new Date();
@@ -46,7 +47,7 @@
                 scope.inparams.templateType = 'individual';
             }
 
-            scope.inparams.staffInSelectedOfficeOnly = true;
+            //scope.inparams.staffInSelectedOfficeOnly = true;
 
             resourceFactory.loanResource.get(scope.inparams, function (data) {
                 scope.products = data.productOptions;
