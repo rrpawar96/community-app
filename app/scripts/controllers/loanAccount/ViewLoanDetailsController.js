@@ -10,6 +10,7 @@
             scope.hideAccrualTransactions = false;
             scope.isHideAccrualsCheckboxChecked = true;
             scope.loandetails = [];
+
             scope.routeTo = function (loanId, transactionId, transactionTypeId) {
                 if (transactionTypeId == 2 || transactionTypeId == 4 || transactionTypeId == 1) {
                     location.path('/viewloantrxn/' + loanId + '/trxnId/' + transactionId);
@@ -21,6 +22,7 @@
              * api returns dates in array format[yyyy, mm, dd], converting the array of dates to date object
              * @param dateFieldName
              */
+
             scope.convertDateArrayToObject = function(dateFieldName){
                 for(var i in scope.loandetails.transactions){
                     scope.loandetails.transactions[i][dateFieldName] = new Date(scope.loandetails.transactions[i].date);
@@ -151,6 +153,7 @@
 
             resourceFactory.LoanAccountResource.getLoanAccountDetails({loanId: routeParams.id, associations: 'all',exclude: 'guarantors,futureSchedule'}, function (data) {
                 scope.loandetails = data;
+                scope.productId = data.loanProductId;
                 scope.convertDateArrayToObject('date');
                 scope.recalculateInterest = data.recalculateInterest || true;
                 scope.isWaived = scope.loandetails.repaymentSchedule.totalWaived > 0;
@@ -405,6 +408,11 @@
                 resourceFactory.standingInstructionTemplateResource.get({fromClientId: scope.loandetails.clientId,fromAccountType: 1,fromAccountId: routeParams.id},function (response) {
                     scope.standinginstruction = response;
                     scope.searchTransaction();
+                });
+
+                resourceFactory.creditBureauByLoanProductId.get({loanProductId: scope.productId}, function (data) {
+                    scope.cblpstatuses = data;
+                    scope.cblpstatusactive = data.isActive;
                 });
             });
 
