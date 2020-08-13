@@ -21,6 +21,12 @@
              * api returns dates in array format[yyyy, mm, dd], converting the array of dates to date object
              * @param dateFieldName
              */
+            resourceFactory.creditBureauMapping.get({}, function (data) {
+                    scope.status = data[0].is_active;
+                scope.creditcheck = scope.status;
+
+            });
+
             scope.convertDateArrayToObject = function(dateFieldName){
                 for(var i in scope.loandetails.transactions){
                     scope.loandetails.transactions[i][dateFieldName] = new Date(scope.loandetails.transactions[i].date);

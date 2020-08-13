@@ -629,6 +629,9 @@
                     equifaxCreditCheck: defineResource(apiVer + "/CreditBureauConfiguration/equifax", {}, {
                         get: {method: 'GET',params:{} }
                     }),
+                    thitsaworkCreditCheck: defineResource(apiVer + "/creditBureauIntegration/getcreditreport/", {}, {
+                        get: {method: 'GET',params:{}}
+                    }),
                     lpdropdown: defineResource(apiVer + "/CreditBureauConfiguration/loanProduct", {}, {
                         get: {method: 'GET', isArray: true }
                     }),

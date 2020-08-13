@@ -1019,6 +1019,9 @@
             .when('/externalservicesCB/CreditBureau/mapcblp', {
                 templateUrl: 'views/administration/MapCreditBureauToLP.html'
             })
+            .when('/creditreport/', {
+                templateUrl: 'views/loans/creditbureau_creditreport.html'
+            })
             .otherwise({
                 templateUrl: "views/errors/404.html"
             });
