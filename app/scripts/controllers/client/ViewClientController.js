@@ -963,6 +963,19 @@
                 };
             };
 
+            resourceFactory.creditBureauTemplate.get(function (data) {
+                scope.creditbureaus=data;
+                scope.creditbureauname=scope.creditbureaus.creditBureauName;
+
+            });
+
+            scope.getcreditreport = function(creditBureauId) {
+                scope.creditbureau = creditBureauId;
+               if (creditBureauId == 1) {
+                    location.path('/creditreport/thitsaworkCreditbureau/'+scope.creditbureau);
+                }
+            }
+
         }
     });
 
