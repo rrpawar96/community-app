@@ -24,6 +24,7 @@
 												ng-change="changeOffice(formData.officeId)" class="form-control" required late-validate>
 											<option value="">{{'label.menu.selectoffice' | translate}}</option>
 										</select>
+										office : {{offices}}
 									</div>
 									<div ng-show="forceOffice != null">
 										<p class="form-control-static">{{forceOffice.name}}</p>
